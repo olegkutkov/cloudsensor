@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="utf-8">
+	<title>AllSky camera web interface - All sensors</title>
+
+	<!-- Bootstrap core CSS -->
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+
+	<!-- Custom styles -->
+	<link href="css/sticky-footer.css" rel="stylesheet">
+	<link href="css/margin.css" rel="stylesheet">
+	<link href="css/gallery.css" rel="stylesheet">
+	<link href="css/main.css" rel="stylesheet">
+
+	<script src="js/jquery-3.2.1.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/gallery.js"></script>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="Allsky camera web interface. Crimean astrophysical observatory">
+	<meta name="author" content="Oleg Kutkov">
+
+	<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+	<link rel="manifest" href="manifest.json">
+	<link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5">
+	<meta name="theme-color" content="#ffffff">
+
+</head>
+
+<body>
+<nav class="navbar navbar-default">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<a class="navbar-brand" href="index.html">AllSky 2.0</a>
+		</div>
+		<ul class="nav navbar-nav">
+			<li><a href="index.html">Main</a></li>
+			<li class="active"><a href="#">Sensors</a></li>
+			<li><a href="system.html">System</a></li>
+			<li><a href="about.html">About</a></li>
+		</ul>
+		<ul class="nav navbar-nav navbar-right">
+			<li><a href="https://www.youtube.com/channel/UC9mot5kKa6-PNMAXGx5_Sig" target="_blank">
+					<img src="yt_logo_mono_light.png" class="img-responsive" style="padding-right: 10px">
+				</a>
+			</li>
+		</ul>
+	</div>
+</nav>
+<div class="container container-footer-offset">
+	<h3>Cloud sensor - all data</h3>
+
+	<div class="row">
+		<div class="col-md-6">
+			<h4 class="sensors_grad_blue">Day</h4>
+			<img id="cloud_day" class="img-responsive layered-image hover-shadow cursor" 
+				src="cloud_sensor_day.png" onclick="openModal();currentSlide(1)"/>
+			<br>
+			<div class="text-center">
+				<a class="btn btn-default btn-xs" href="cloud_sensor_day.csv" download>
+					<span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download csv
+				</a>
+			</div>
+		</div>
+		<div class="col-md-6">
+			<h4 class="sensors_grad_blue">Week</h4>
+			<img class="img-responsive layered-image hover-shadow cursor"
+				src="cloud_sensor_week.png" onclick="openModal();currentSlide(2)"/>
+			<br>
+			<div class="text-center">
+				<a class="btn btn-default btn-xs" href="cloud_sensor_week.csv" download>
+					<span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download csv
+				</a>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-6">
+			<h4 class="sensors_grad_blue">Month</h4>
+			<img id="cloud_month" class="img-responsive layered-image hover-shadow cursor"
+				src="cloud_sensor_month.png" onclick="openModal();currentSlide(3)"/>
+			<br>
+			<div class="text-center">
+				<a class="btn btn-default btn-xs" href="cloud_sensor_month.csv" download>
+					<span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download csv
+				</a>
+			</div>
+		</div>
+		<div class="col-md-6">
+			<h4 class="sensors_grad_blue">Year</h4>
+			<img id="cloud_year" class="img-responsive layered-image hover-shadow cursor"
+				src="cloud_sensor_year.png" onclick="openModal();currentSlide(4)"/>
+			<br>
+			<div class="text-center">
+				<a class="btn btn-default btn-xs" href="cloud_sensor_year.csv" download>
+					<span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download csv
+				</a>
+			</div>
+		</div>
+	</div>
+	<br>
+
+	<h3 class="sky_left-margin">Ambient sensor - all data</h3>
+	<div class="row">
+		<div class="col-md-6">
+			<h4 class="sensors_grad_yellow">Day</h4>
+			<img id="ambient_day" class="img-responsive layered-image hover-shadow cursor"
+				src="external_dh22_day.png" onclick="openModal();currentSlide(5)"/>
+			<br>
+			<div class="text-center">
+				<a class="btn btn-default btn-xs" href="external_dh22_day.csv" download>
+					<span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download csv
+				</a>
+			</div>
+		</div>
+		<div class="col-md-6">
+			<h4 class="sensors_grad_yellow">Week</h4>
+			<img id="ambient_week" class="img-responsive layered-image hover-shadow cursor"
+				src="external_dh22_week.png" onclick="openModal();currentSlide(6)"/>
+			<br>
+			<div class="text-center">
+				<a class="btn btn-default btn-xs" href="external_dh22_week.csv" download>
+					<span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download csv
+				</a>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-6">
+			<h4 class="sensors_grad_yellow">Month</h4>
+			<img id="ambient_month" class="img-responsive layered-image hover-shadow cursor"
+				src="external_dh22_month.png" onclick="openModal();currentSlide(7)"/>
+			<br>
+			<div class="text-center">
+				<a class="btn btn-default btn-xs" href="external_dh22_month.csv" download>
+					<span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download csv
+				</a>
+			</div>
+		</div>
+		<div class="col-md-6">
+			<h4 class="sensors_grad_yellow">Year</h4>
+			<img id="ambient_year" class="img-responsive layered-image hover-shadow cursor"
+				src="external_dh22_year.png" onclick="openModal();currentSlide(8)"/>
+			<br>
+			<div class="text-center">
+				<a class="btn btn-default btn-xs" href="external_dh22_year.csv" download>
+					<span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download csv
+				</a>
+			</div>
+		</div>
+	</div>
+	<br>
+
+	<h3 class="sky_left-margin">Light sensor - all data</h3>
+	<div class="row">
+		<div class="col-md-6">
+			<h4 class="sensors_grad_green">Day</h4>
+			<img id="light_day" class="img-responsive layered-image hover-shadow cursor"
+				src="ambient_light_day.png" onclick="openModal();currentSlide(9)"/>
+			<br>
+			<div class="text-center">
+				<a class="btn btn-default btn-xs" href="ambient_light_day.csv" download>
+					<span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download csv
+				</a>
+			</div>
+		</div>
+		<div class="col-md-6">
+			<h4 class="sensors_grad_green">Week</h4>
+			<img id="light_week" class="img-responsive layered-image hover-shadow cursor"
+				src="ambient_light_week.png" onclick="openModal();currentSlide(10)"/>
+			<br>
+			<div class="text-center">
+				<a class="btn btn-default btn-xs" href="ambient_light_week.csv" download>
+					<span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download csv
+				</a>
+			</div>
+		</div>
+	</div>
+	<div class="row sky_left-margin">
+		<div class="col-md-6">
+			<h4 class="sensors_grad_green">Month</h4>
+			<img id="light_month" class="img-responsive layered-image hover-shadow cursor"
+				src="ambient_light_month.png" onclick="openModal();currentSlide(11)"/>
+			<br>
+			<div class="text-center">
+				<a class="btn btn-default btn-xs" href="ambient_light_month.csv" download>
+					<span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download csv
+				</a>
+			</div>
+		</div>
+		<div class="col-md-6">
+			<h4 class="sensors_grad_green">Year</h4>
+			<img id="light_year" class="img-responsive layered-image hover-shadow cursor"
+				src="ambient_light_year.png" onclick="openModal();currentSlide(12)"/>
+			<br>
+			<div class="text-center">
+				<a class="btn btn-default btn-xs" href="ambient_light_year.csv" download>
+					<span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download csv
+				</a>
+			</div>
+		</div>
+	</div>
+
+	<div id="modal" class="modal">
+		<span class="close cursor" onclick="closeModal()">&times;</span>
+		<div class="modal-content">
+			<div class="imgSlides">
+				<div class="numbertext">1 / 12</div>
+				<img src="cloud_sensor_day.png" class="img-responsive layered-image" alt="Cloud sensor - Day">
+				<br>
+				<p>Cloud sensor - 1 Day</p>
+			</div>
+
+			<div class="imgSlides">
+				<div class="numbertext">2 / 12</div>
+				<img src="cloud_sensor_week.png" class="img-responsive layered-image">
+				<br>
+				<p>Cloud sensor - 1 Week</p>
+			</div>
+			<div class="imgSlides">
+				<div class="numbertext">3 / 12</div>
+				<img src="cloud_sensor_month.png" class="img-responsive layered-image">
+				<br>
+				<p>Cloud sensor - 1 Month</p>
+			</div>
+			<div class="imgSlides">
+				<div class="numbertext">4 / 12</div>
+				<img src="cloud_sensor_year.png" class="img-responsive layered-image">
+				<br>
+				<p>Cloud sensor - 1 Year</p>
+			</div>
+			<div class="imgSlides">
+				<div class="numbertext">5 / 12</div>
+				<img src="external_dh22_day.png" class="img-responsive layered-image">
+				<br>
+				<p>Ambient sensor - 1 Day</p>
+			</div>
+			<div class="imgSlides">
+				<div class="numbertext">6 / 12</div>
+				<img src="external_dh22_week.png" class="img-responsive layered-image">
+				<br>
+				<p>Ambient sensor - 1 Week</p>
+			</div>
+			<div class="imgSlides">
+				<div class="numbertext">7 / 12</div>
+				<img src="external_dh22_month.png" class="img-responsive layered-image">
+				<br>
+				<p>Ambient sensor - 1 Month</p>
+			</div>
+			<div class="imgSlides">
+				<div class="numbertext">8 / 12</div>
+				<img src="external_dh22_year.png" class="img-responsive layered-image">
+				<br>
+				<p>Ambient sensor - 1 Year</p>
+			</div>
+
+			<div class="imgSlides">
+				<div class="numbertext">9 / 12</div>
+				<img src="ambient_light_day.png" class="img-responsive layered-image">
+				<br>
+				<p>Light sensor - 1 Day</p>
+			</div>
+			<div class="imgSlides">
+				<div class="numbertext">10 / 12</div>
+				<img src="ambient_light_week.png" class="img-responsive layered-image">
+				<br>
+				<p>Light sensor - 1 Week</p>
+			</div>
+			<div class="imgSlides">
+				<div class="numbertext">11 / 12</div>
+				<img src="ambient_light_month.png" class="img-responsive layered-image">
+				<br>
+				<p>Light sensor - 1 Month</p>
+			</div>
+			<div class="imgSlides">
+				<div class="numbertext">12 / 12</div>
+				<img src="ambient_light_month.png" class="img-responsive layered-image">
+				<br>
+				<p>Light sensor - 1 Year</p>
+			</div>
+
+
+			<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+			<a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+			<div class="caption-container">
+				<p id="caption"></p>
+			</div>
+		</div>
+	</div>
+
+</div>
+
+<footer class="footer">
+	<div class="container">
+		<p class="text-muted-footer text-center">
+			<br><br>Camera development: <a href="mailto:kutkov.o@yandex.ru?Subject=AllSky">Oleg Kutkov</a>
+			<br>Crimean astrophysical observatory, 2017
+		</p>
+	</div>
+</footer>
+
+</body>
+</html>

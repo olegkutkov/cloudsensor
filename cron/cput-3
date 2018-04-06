@@ -1,0 +1,1 @@
+*/5 * * * *	root	/opt/cloudsens/bin/cpu_temp_to_db.sh
