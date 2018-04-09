@@ -6,7 +6,7 @@ CC := gcc
 PROGRAM = read_htu21d
 SRC := htu21d.c crc8.c
 CFLAGS := -Wall -std=gnu99
-TARGET_DIR := /opt/allsky/bin
+TARGET_DIR := /opt/cloudsens/bin
 
 all: $(PROGRAM)
 
