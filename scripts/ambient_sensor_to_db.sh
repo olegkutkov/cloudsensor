@@ -18,7 +18,7 @@ put_to_db()
 	sqlite3 /media/STORAGE/db/sensordata.db "insert into ambientsensor(temp, humid) values (\"${temp}\", \"${humid}\");"	
 }
 
-external_sensor=`/opt/allsky/bin/read_htu21d`
+external_sensor=`/opt/cloudsens/bin/read_htu21d`
 
 put_to_db "${external_sensor}"
 
