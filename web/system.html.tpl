@@ -4,7 +4,7 @@
 
 	<meta charset="utf-8">
 
-	<title>AllSky camera web interface - System info</title>
+	<title>Cloud sensor - System info</title>
 
 	<!-- Bootstrap core CSS -->
 	<link href="css/bootstrap.min.css" rel="stylesheet">
@@ -36,20 +36,12 @@
 <nav class="navbar navbar-default">
 	<div class="container-fluid">
 		<div class="navbar-header">
-			<a class="navbar-brand" href="index.html">AllSky 2.0</a>
+			<a class="navbar-brand" href="index.html">CloudSens 2.0</a>
 		</div>
 		<ul class="nav navbar-nav">
 			<li><a href="index.html">Main</a></li>
 			<li><a href="sensors.html">Sensors</a></li>
 			<li class="active"><a href="#">System</a></li>
-			<li><a href="about.html">About</a></li>
-		</ul>
-		<ul class="nav navbar-nav navbar-right">
-			<li>
-				<a href="https://www.youtube.com/channel/UC9mot5kKa6-PNMAXGx5_Sig" target="_blank">
-					<img src="yt_logo_mono_light.png" class="img-responsive" style="padding-right: 10px">
-				</a>
-			</li>
 		</ul>
 	</div>
 </nav>
@@ -103,26 +95,12 @@
 						</tr>
 					</tbody>
 				</table>
-				<h4>Available cameras</h4>
-				<table class="table table-striped">
-					<tbody>
-						{camera_list}
-					</tbody>
-				</table>
 				<h4>Available sensors</h4>
 				<table class="table table-striped">
 					<tbody>
 						<tr>
-							<td><strong>AM2302 outdoor</strong></td>
+							<td><strong>HTU21D outdoor</strong></td>
 							<td>Humidity and temperature sensor</td>
-						</tr>
-						<tr>
-							<td><strong>AM2302 in-box:</strong></td>
-							<td>Humidity and temperature sensor</td>
-						</tr>
-						<tr>
-							<td><strong>TSL2561</strong></td>
-							<td>Visible and infrared light sensor</td>
 						</tr>
 						<tr>
 							<td><strong>MLX90614</strong></td>
@@ -149,8 +127,8 @@
 <footer class="footer">
 	<div class="container">
 		<p class="text-muted-footer text-center">
-			<br><br>Camera development: <a href="mailto:kutkov.o@yandex.ru?Subject=AllSky">Oleg Kutkov</a>
-			<br>Crimean astrophysical observatory, 2017
+			<br><br>Sensor development: <a href="mailto:kutkov.o@yandex.ru?Subject=CloudSens">Oleg Kutkov</a>
+			<br>Crimean astrophysical observatory, 2018
 		</p>
 	</div>
 </footer>
