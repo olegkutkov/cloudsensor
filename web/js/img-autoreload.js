@@ -1,11 +1,10 @@
 $(document).ready(function() {
     var imageList = [
-        {main: 'cam1', modal: 'cam1_modal'},
-        {main: 'cam2', modal: 'cam2_modal'},
-        {main: 'cloud', modal: 'cloud_modal'},
-        {main: 'ambient', modal: 'ambient_modal'}
+        {main: 'cloud_sensor', modal: 'cloud_sensor_modal'},
+        {main: 'ambient_sensor', modal: 'ambient_sensor_modal'}
     ];
-    var textList = ['twilight_info', 'sky_temp', 'current_cond', 'air_temp', 'air_humid'];
+
+    var textList = ['sky_temp', 'current_cond', 'air_temp', 'air_humid'];
     var REFRESH_INTERVAL = 40000;
 
     var images = initImages(imageList);
