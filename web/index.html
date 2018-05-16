@@ -68,9 +68,10 @@
 			<h3>Cloud sensor</h3>
 			<h4>Current sky temperature: <span id="sky_temp"></span></h4>
 			<h4>Observation conditions: <span id="current_cond"></span></h4>
-			<img id="cloud" class="img-responsive layered-image hover-shadow cursor" src="cloud_sensor_day.png"
+			<img id="cloud_sensor" class="img-responsive layered-image hover-shadow cursor" src="cloud_sensor_day.png"
 				onclick="openModal();currentSlide(1)" alt="Cloud sensor plot"
 				alt="Cloud sensor">
+			<br>
 			<div class="text-center">
 				<a class="btn btn-default btn-xs" href="cloud_sensor_day.csv" download>
 					<span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download csv
@@ -81,8 +82,9 @@
 			<h3>Ambient sensor</h3>
 			<h4>Current air temperature: <span id="air_temp" style="padding-right: 1.2em"> </span></h4>
 			<h4>Humidity: <span id="air_humid"></span> %</h4>
-			<img id="ambient" class="img-responsive layered-image hover-shadow cursor" src="ambient_sensor_day.png"
+			<img id="ambient_sensor" class="img-responsive layered-image hover-shadow cursor" src="ambient_sensor_day.png"
 				onclick="openModal();currentSlide(2)" alt="Ambient sensor plot">
+			<br>
 			<div class="text-center">
 				<a class="btn btn-default btn-xs" href="ambient_sensor_day.csv" download>
 					<span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download csv
@@ -96,11 +98,11 @@
 		<div class="modal-content">
 			<div class="imgSlides">
 				<div class="numbertext">1 / 2</div>
-				<img id="cloud_sensor" src="cloud_sensor_day.png" class="img-responsive layered-image">
+				<img id="cloud_sensor_modal" src="cloud_sensor_day.png" class="img-responsive layered-image">
 			</div>
 			<div class="imgSlides">
 				<div class="numbertext">2 / 2</div>
-				<img id="ambient_sensor" src="ambient_sensor_day.png" class="img-responsive layered-image">
+				<img id="ambient_sensor_modal" src="ambient_sensor_day.png" class="img-responsive layered-image">
 			</div>
 		</div>
 	</div>
