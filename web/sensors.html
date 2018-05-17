@@ -102,10 +102,10 @@
 		<div class="col-md-6">
 			<h4 class="sensors_grad_yellow">Day</h4>
 			<img id="ambient_day" class="img-responsive layered-image hover-shadow cursor"
-				src="external_dh22_day.png" onclick="openModal();currentSlide(5)"/>
+				src="ambient_sensor_day.png" onclick="openModal();currentSlide(5)"/>
 			<br>
 			<div class="text-center">
-				<a class="btn btn-default btn-xs" href="external_dh22_day.csv" download>
+				<a class="btn btn-default btn-xs" href="ambient_sensor_day.csv" download>
 					<span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download csv
 				</a>
 			</div>
@@ -113,10 +113,10 @@
 		<div class="col-md-6">
 			<h4 class="sensors_grad_yellow">Week</h4>
 			<img id="ambient_week" class="img-responsive layered-image hover-shadow cursor"
-				src="external_dh22_week.png" onclick="openModal();currentSlide(6)"/>
+				src="ambient_sensor_week.png" onclick="openModal();currentSlide(6)"/>
 			<br>
 			<div class="text-center">
-				<a class="btn btn-default btn-xs" href="external_dh22_week.csv" download>
+				<a class="btn btn-default btn-xs" href="ambient_sensor_week.csv" download>
 					<span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download csv
 				</a>
 			</div>
@@ -126,10 +126,10 @@
 		<div class="col-md-6">
 			<h4 class="sensors_grad_yellow">Month</h4>
 			<img id="ambient_month" class="img-responsive layered-image hover-shadow cursor"
-				src="external_dh22_month.png" onclick="openModal();currentSlide(7)"/>
+				src="ambient_sensor_month.png" onclick="openModal();currentSlide(7)"/>
 			<br>
 			<div class="text-center">
-				<a class="btn btn-default btn-xs" href="external_dh22_month.csv" download>
+				<a class="btn btn-default btn-xs" href="ambient_sensor_month.csv" download>
 					<span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download csv
 				</a>
 			</div>
@@ -137,10 +137,10 @@
 		<div class="col-md-6">
 			<h4 class="sensors_grad_yellow">Year</h4>
 			<img id="ambient_year" class="img-responsive layered-image hover-shadow cursor"
-				src="external_dh22_year.png" onclick="openModal();currentSlide(8)"/>
+				src="ambient_sensor_year.png" onclick="openModal();currentSlide(8)"/>
 			<br>
 			<div class="text-center">
-				<a class="btn btn-default btn-xs" href="external_dh22_year.csv" download>
+				<a class="btn btn-default btn-xs" href="ambient_sensor_year.png" download>
 					<span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download csv
 				</a>
 			</div>
@@ -148,134 +148,58 @@
 	</div>
 	<br>
 
-	<h3 class="sky_left-margin">Light sensor - all data</h3>
-	<div class="row">
-		<div class="col-md-6">
-			<h4 class="sensors_grad_green">Day</h4>
-			<img id="light_day" class="img-responsive layered-image hover-shadow cursor"
-				src="ambient_light_day.png" onclick="openModal();currentSlide(9)"/>
-			<br>
-			<div class="text-center">
-				<a class="btn btn-default btn-xs" href="ambient_light_day.csv" download>
-					<span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download csv
-				</a>
-			</div>
-		</div>
-		<div class="col-md-6">
-			<h4 class="sensors_grad_green">Week</h4>
-			<img id="light_week" class="img-responsive layered-image hover-shadow cursor"
-				src="ambient_light_week.png" onclick="openModal();currentSlide(10)"/>
-			<br>
-			<div class="text-center">
-				<a class="btn btn-default btn-xs" href="ambient_light_week.csv" download>
-					<span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download csv
-				</a>
-			</div>
-		</div>
-	</div>
-	<div class="row sky_left-margin">
-		<div class="col-md-6">
-			<h4 class="sensors_grad_green">Month</h4>
-			<img id="light_month" class="img-responsive layered-image hover-shadow cursor"
-				src="ambient_light_month.png" onclick="openModal();currentSlide(11)"/>
-			<br>
-			<div class="text-center">
-				<a class="btn btn-default btn-xs" href="ambient_light_month.csv" download>
-					<span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download csv
-				</a>
-			</div>
-		</div>
-		<div class="col-md-6">
-			<h4 class="sensors_grad_green">Year</h4>
-			<img id="light_year" class="img-responsive layered-image hover-shadow cursor"
-				src="ambient_light_year.png" onclick="openModal();currentSlide(12)"/>
-			<br>
-			<div class="text-center">
-				<a class="btn btn-default btn-xs" href="ambient_light_year.csv" download>
-					<span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download csv
-				</a>
-			</div>
-		</div>
-	</div>
-
 	<div id="modal" class="modal">
 		<span class="close cursor" onclick="closeModal()">&times;</span>
 		<div class="modal-content">
 			<div class="imgSlides">
-				<div class="numbertext">1 / 12</div>
+				<div class="numbertext">1 / 8</div>
 				<img src="cloud_sensor_day.png" class="img-responsive layered-image" alt="Cloud sensor - Day">
 				<br>
 				<p>Cloud sensor - 1 Day</p>
 			</div>
 
 			<div class="imgSlides">
-				<div class="numbertext">2 / 12</div>
+				<div class="numbertext">2 / 8</div>
 				<img src="cloud_sensor_week.png" class="img-responsive layered-image">
 				<br>
 				<p>Cloud sensor - 1 Week</p>
 			</div>
 			<div class="imgSlides">
-				<div class="numbertext">3 / 12</div>
+				<div class="numbertext">3 / 8</div>
 				<img src="cloud_sensor_month.png" class="img-responsive layered-image">
 				<br>
 				<p>Cloud sensor - 1 Month</p>
 			</div>
 			<div class="imgSlides">
-				<div class="numbertext">4 / 12</div>
+				<div class="numbertext">4 / 8</div>
 				<img src="cloud_sensor_year.png" class="img-responsive layered-image">
 				<br>
 				<p>Cloud sensor - 1 Year</p>
 			</div>
 			<div class="imgSlides">
-				<div class="numbertext">5 / 12</div>
+				<div class="numbertext">5 / 8</div>
 				<img src="external_dh22_day.png" class="img-responsive layered-image">
 				<br>
 				<p>Ambient sensor - 1 Day</p>
 			</div>
 			<div class="imgSlides">
-				<div class="numbertext">6 / 12</div>
+				<div class="numbertext">6 / 8</div>
 				<img src="external_dh22_week.png" class="img-responsive layered-image">
 				<br>
 				<p>Ambient sensor - 1 Week</p>
 			</div>
 			<div class="imgSlides">
-				<div class="numbertext">7 / 12</div>
+				<div class="numbertext">7 / 8</div>
 				<img src="external_dh22_month.png" class="img-responsive layered-image">
 				<br>
 				<p>Ambient sensor - 1 Month</p>
 			</div>
 			<div class="imgSlides">
-				<div class="numbertext">8 / 12</div>
+				<div class="numbertext">8 / 8</div>
 				<img src="external_dh22_year.png" class="img-responsive layered-image">
 				<br>
 				<p>Ambient sensor - 1 Year</p>
 			</div>
-
-			<div class="imgSlides">
-				<div class="numbertext">9 / 12</div>
-				<img src="ambient_light_day.png" class="img-responsive layered-image">
-				<br>
-				<p>Light sensor - 1 Day</p>
-			</div>
-			<div class="imgSlides">
-				<div class="numbertext">10 / 12</div>
-				<img src="ambient_light_week.png" class="img-responsive layered-image">
-				<br>
-				<p>Light sensor - 1 Week</p>
-			</div>
-			<div class="imgSlides">
-				<div class="numbertext">11 / 12</div>
-				<img src="ambient_light_month.png" class="img-responsive layered-image">
-				<br>
-				<p>Light sensor - 1 Month</p>
-			</div>
-			<div class="imgSlides">
-				<div class="numbertext">12 / 12</div>
-				<img src="ambient_light_month.png" class="img-responsive layered-image">
-				<br>
-				<p>Light sensor - 1 Year</p>
-			</div>
-
 
 			<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
 			<a class="next" onclick="plusSlides(1)">&#10095;</a>
