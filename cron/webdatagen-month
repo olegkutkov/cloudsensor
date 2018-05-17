@@ -1,2 +1,2 @@
-0 0 * * SUN	allsky	/opt/cloudsens/bin/webdatagen/generate_web_data.sh sensors-month > /storage/webdata/webdatagen_month_last.log 2>&1
+0 0 * * SUN	allsky	/opt/cloudsens/bin/webdatagen/generate_web_data.sh sensors-month > /runtime_storage/webdata/webdatagen_month_last.log 2>&1
 

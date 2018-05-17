@@ -1,1 +1,2 @@
 */2 * * * *	root	/opt/cloudsens/bin/mlx_sensor_to_db.sh
+

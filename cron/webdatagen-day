@@ -1,1 +1,1 @@
-*/5 * * * *	allsky	/opt/cloudsens/bin/webdatagen/generate_web_data.sh sensors-day > /storage/webdata/webdatagen_day_last.log 2>&1
+*/5 * * * *	allsky	/opt/cloudsens/bin/webdatagen/generate_web_data.sh sensors-day > /runtime_storage/webdata/webdatagen_day_last.log 2>&1

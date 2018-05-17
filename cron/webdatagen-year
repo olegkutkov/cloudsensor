@@ -1,2 +1,2 @@
-0 0 1 * *	allsky	/opt/cloudsens/bin/webdatagen/generate_web_data.sh sensors-year > /storage/webdata/webdatagen_year_last.log 2>&1
+0 0 1 * *	allsky	/opt/cloudsens/bin/webdatagen/generate_web_data.sh sensors-year > /runtime_storage/webdata/webdatagen_year_last.log 2>&1
 
