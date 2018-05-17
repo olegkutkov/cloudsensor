@@ -74,10 +74,6 @@
 				<table class="table table-striped">
 					<tbody>
 						<tr>
-							<td><strong>CPU freq:</strong></td>
-							<td>{cpu_freq}</td>
-						</tr>
-						<tr>
 							<td><strong>System memory:</strong></td>
 							<td>{sys_mem}</td>
 						</tr>
@@ -117,9 +113,6 @@
 			<h4>Internal sensors</h4>
 			<img id="cput" class="img-responsive layered-image"
 				src="cpu_temperature_day.png">
-			<br>
-			<img id="airth" class="img-responsive layered-image"
-				src="internal_dh22_day.png">
 		</div>
 	</div>
 </div>
