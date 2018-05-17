@@ -15,7 +15,7 @@ put_to_db()
 		exit 1
 	fi
 
-	sqlite3 /media/STORAGE/db/sensordata.db "insert into ambientsensor(temp, humid) values (\"${temp}\", \"${humid}\");"	
+	sqlite3 /media/STORAGE/db/sensordata.db "insert into ambientsensor(temp, humid) values (\"${temp}\", \"${humidity}\");"	
 }
 
 external_sensor=`/opt/cloudsens/bin/read_htu21d`
