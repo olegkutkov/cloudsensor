@@ -1,16 +1,55 @@
 #!/usr/bin/python
 
 import numpy as np
+
+import matplotlib
+matplotlib.use('Agg')
+
 import matplotlib.pyplot as plt
 import matplotlib.patches as mpatches
 
 import subprocess
 import sys
+import os
 
 import config
 
 def execute_system_cmd(cmd):
 	return subprocess.check_output(cmd).decode('utf-8')
+
+def get_sys_uptime():
+	try:
+		f = open( "/proc/uptime" )
+		contents = f.read().split()
+		f.close()
+	except:
+		return "Cannot open uptime file: /proc/uptime"
+ 
+	total_seconds = float(contents[0])
+ 
+	# Helper vars:
+	MINUTE  = 60
+	HOUR    = MINUTE * 60
+	DAY     = HOUR * 24
+ 
+	# Get the days, hours, etc:
+	days    = int( total_seconds / DAY )
+	hours   = int( ( total_seconds % DAY ) / HOUR )
+	minutes = int( ( total_seconds % HOUR ) / MINUTE )
+	seconds = int( total_seconds % MINUTE )
+ 
+	# Build up the pretty string (like this: "N days, N hours, N minutes, N seconds")
+	string = ""
+
+	if days > 0:
+		string += str(days) + " " + (days == 1 and "day" or "days" ) + ", "
+	if len(string) > 0 or hours > 0:
+		string += str(hours) + " " + (hours == 1 and "hour" or "hours" ) + ", "
+	if len(string) > 0 or minutes > 0:
+		string += str(minutes) + " " + (minutes == 1 and "minute" or "minutes" ) + ", "
+		string += str(seconds) + " " + (seconds == 1 and "second" or "seconds" )
+ 
+	return string;
 
 def os_report():
 	board_name = ''
@@ -27,7 +66,7 @@ def os_report():
 
 	kernel_version = execute_system_cmd(['uname', '-r']).strip()
 
-	system_uptime = execute_system_cmd(['uptime', '-p']).strip()
+	system_uptime = get_sys_uptime()
 
 	return board_name, os_release, kernel_version, system_uptime
 
@@ -57,34 +96,6 @@ def clock_and_voltages_report():
 
 	return cpu_freq, sys_mem, core_volt, sdram_volt
 
-def cameras_report():
-	qhy_dev = execute_system_cmd([config.QHY_CAM_BIN, '-l']).strip()
-	rpi_cam = execute_system_cmd(['vcgencmd', 'get_camera']).strip()
-
-	qhy_model = '<span class="text-danger">Failed to detect</span>'
-
-	for line in qhy_dev.split('\n'):
-		if 'Model' in line:
-			qhy_model = line.split(':')[1]
-			break
-
-	rpi_cam_status = 'Raspberry camera module. Supported: '
-
-	rpi_cam_params = rpi_cam.split()
-
-	if len(rpi_cam_params) < 2:
-		rpi_cam_status += '<span class="text-danger">No</span>'
-	else:
-		supported = '<span class="success">Yes</span>' \
-					if (rpi_cam_params[0].split('=')[1] == '1') else '<span class="text-danger">No</span>'
-
-		detected = '<span class="success">Yes</span>' \
-					if (rpi_cam_params[1].split('=')[1] == '1') else '<span class="text-danger">No</span>'
-
-		rpi_cam_status += str(supported) + '  Detected: ' + str(detected)
-
-	return ["Night camera:", qhy_model], ["Day camera:", rpi_cam_status]
-
 def plot_disks_usage(output_file):
 	df_full = execute_system_cmd(['df']).strip().split('\n')
 
@@ -97,7 +108,7 @@ def plot_disks_usage(output_file):
 		if 'root' in line:
 			root_metric = line.split()
 
-		if 'storage' in line:
+		if 'STORAGE' in line:
 			storage_metric = line.split()
 
 	labels = ['Free', 'Used']
@@ -107,23 +118,23 @@ def plot_disks_usage(output_file):
 
 	sizes = [int(root_metric[3]), int(root_metric[2])]
 
-	ax1.pie(sizes, labels=labels, autopct='%1.1f%%', startangle=180, colors=colors)
+	ax1.pie(sizes, labels=labels, autopct='%1.1f%%', colors=colors)
 	ax1.axis('equal')
 	ax1.set_title("Root")
 
 	red_patch = mpatches.Patch(color='red', label='Used: ' + str(int(root_metric[2]) / 1024) + ' Mbytes')
 	green_patch = mpatches.Patch(color='yellowgreen', label='Free: ' + str(int(root_metric[3]) / 1024) + ' Mbytes')
-	ax1.legend(handles=[red_patch, green_patch])
+#	ax1.legend(handles=[red_patch, green_patch])
 
 	sizes = [int(storage_metric[3]), int(storage_metric[2])]
 
-	ax2.pie(sizes, labels=labels, autopct='%1.1f%%', startangle=180, colors=colors)
+	ax2.pie(sizes, labels=labels, autopct='%1.1f%%', colors=colors)
 	ax2.axis('equal')
 	ax2.set_title("Storage")
 
 	red_patch = mpatches.Patch(color='red', label='Used: ' + str(int(storage_metric[2]) / 1024) + ' Mbytes')
 	green_patch = mpatches.Patch(color='yellowgreen', label='Free: ' + str(int(storage_metric[3]) / 1024) + ' Mbytes')
-	ax2.legend(handles=[red_patch, green_patch])
+#	ax2.legend(handles=[red_patch, green_patch])
 
 	fig.tight_layout(pad=2)
 
@@ -154,19 +165,6 @@ def build_page(template_html_file, report_html_file):
 	sys_mem = clock_voltages_report[1]
 	core_volt = clock_voltages_report[2]
 	sdram_volt = clock_voltages_report[3]
-
-	cameras = cameras_report()
-
-	print '\nCameras report'
-	print cameras
-
-	camera_list = ''
-
-	for camera in cameras:
-		camera_list += '<tr>'
-		camera_list += '<td>' + camera[0] + '</td>' 
-		camera_list += '<td>' + camera[1] + '</td>'
-		camera_list += '</tr>\n'
 
 	html_report_page = html_template.format(**locals())
 

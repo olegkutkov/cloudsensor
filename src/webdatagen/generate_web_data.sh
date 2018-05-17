@@ -2,9 +2,9 @@
 
 datetime=`date`
 
-EXEC_DIR='/opt/allsky/bin/webdatagen'
-SRC_DIR='/storage/webdata'
-DST_DIR='/storage/web'
+EXEC_DIR='/opt/cloudsens/bin/webdatagen'
+SRC_DIR='/runtime_storage/webdata'
+DST_DIR='/runtime_storage/web'
 
 echo 'Webdata generator started at '$datetime
 

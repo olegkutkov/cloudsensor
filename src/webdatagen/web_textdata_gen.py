@@ -1,8 +1,8 @@
 #!/usr/bin/python
 
-import MySQLdb
 import sys
 import config
+import sqlite3
 
 def build_airtemp_file(airtemp_data):
 	current_air_temp_web_data = 'Collecting data...'
@@ -106,22 +106,20 @@ def build_skytemp_file(skytemp_data, airtemp_data):
 
 	print 'Current observation conditions stored to ' + config.WEB_CURRENT_COND_FILE
 
+sqlite_conn = sqlite3.connect(config.SQLITE_DB_FILE, detect_types = sqlite3.PARSE_DECLTYPES | sqlite3.PARSE_COLNAMES)
 
-db = MySQLdb.connect(host=config.MYSQL_HOST, user=config.MYSQL_USER, \
-						passwd=config.MYSQL_PASSWORD, db=config.MYSQL_DB, connect_timeout=90)
+cur = sqlite_conn.cursor()
 
-cur = db.cursor()
-
-cur.execute("select ir_value from cloud_sensor order by time desc limit 2")
+cur.execute("select temp from cloudsensor order by time desc limit 2")
 
 skytemp_data = cur.fetchall()
 
-cur.execute("select temperature, humidity from external_dh22 order by time desc limit 2")
+cur.execute("select temp, humid from ambientsensor order by time desc limit 2")
 
 airtemp_data = cur.fetchall()
 
 build_airtemp_file(airtemp_data)
 build_skytemp_file(skytemp_data, airtemp_data)
 
-db.close()
+sqlite_conn.close()
 
