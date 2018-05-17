@@ -1,5 +1,7 @@
 #!/bin/bash
 
+sleep 10
+
 put_to_db()
 {
 	temp=`echo $1 | awk '{print $1}' | awk -F '=' '{print $2}'`

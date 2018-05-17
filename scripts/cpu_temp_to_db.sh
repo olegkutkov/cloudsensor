@@ -1,5 +1,7 @@
 #!/bin/bash
 
+sleep 13
+
 put_to_db()
 {
 	temp=$1

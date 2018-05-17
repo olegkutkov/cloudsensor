@@ -1,5 +1,7 @@
 #!/bin/bash
 
+sleep 16
+
 put_to_db()
 {
 	sensor_data=$1
