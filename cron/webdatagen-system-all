@@ -1,0 +1,2 @@
+*/15 * * * *	allsky	/opt/cloudsens/bin/webdatagen/generate_web_data.sh system-report > /storage/webdata/webdatagen_system_all_last.log 2>&1
+
