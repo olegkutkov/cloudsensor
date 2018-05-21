@@ -27,6 +27,9 @@ def plot_cpu_temperature(sensor_data, output_file):
 	plt.title('CPU temperature: ' + str(ydata[-1]) + ' C\n')
 	plt.plot(xdata, temper, label = "Temperature", color="red")
 
+	plt.xlabel('Time period: ' + str(xdata[0].date()) \
+				+ ' - ' + str((xdata[len(xdata)-1]).date()) + ' UTC')
+
 	plt.gca().xaxis.set_major_formatter(mdates.DateFormatter('%H:%M'))
 
 	plt.legend()

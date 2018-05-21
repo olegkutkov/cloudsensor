@@ -31,7 +31,7 @@ def plot_sky_temp(sensor_data, output_file, output_csv_file, one_day=False):
 	plt.plot(xdata, s)
 
 	plt.xlabel('Time period: ' + str(xdata[0].date()) \
-				+ ' - ' + str((xdata[len(xdata)-1]).date()))
+				+ ' - ' + str((xdata[len(xdata)-1]).date()) + ' UTC')
 
 	if one_day:
 		ax.xaxis.set_major_formatter(mdates.DateFormatter('%H:%M'))
@@ -94,7 +94,7 @@ def plot_ambient_temp(sensor_data, output_file, output_csv_file, one_day=False):
 	plt.plot(xdata, humid, label = "Humidity", color='green')
 
 	plt.xlabel('Time period: ' + str(xdata[0].date()) \
-				+ ' - ' + str((xdata[len(xdata)-1]).date()))
+				+ ' - ' + str((xdata[len(xdata)-1]).date()) + ' UTC')
 
 	if one_day:
 		plt.gca().xaxis.set_major_formatter(mdates.DateFormatter('%H:%M'))
