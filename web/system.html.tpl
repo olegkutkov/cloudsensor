@@ -114,6 +114,13 @@
 			<img id="cput" class="img-responsive layered-image"
 				src="cpu_temperature_day.png">
 		</div>
+		<div class="col-md-6">
+			<br>
+			<h4>Database backup</h4>
+                        <a class="btn btn-default btn-xs" href="sensordata.bak.gz" download>
+                                <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download sensordata.bak.gz
+                        </a>
+		</div>
 	</div>
 </div>
 
@@ -121,7 +128,7 @@
 	<div class="container">
 		<p class="text-muted-footer text-center">
 			<br><br>Sensor development: <a href="mailto:kutkov.o@yandex.ru?Subject=CloudSens">Oleg Kutkov</a>
-			<br>Crimean astrophysical observatory, 2018
+			<br>Crimean astrophysical observatory, 2018 - <script>document.write(new Date().getFullYear())</script>
 		</p>
 	</div>
 </footer>
